@@ -27,17 +27,28 @@ class WidgetCarro extends StatelessWidget {
 
       //DECORAÇÃO
       decoration: BoxDecoration(
-        borderRadius: BorderRadius.all(
-          Radius.circular(10),
-        ),
+
         border: Border.all(
           color: Colors.black,
           width: 1,
         ),
-        color: Colors.blue[100],
+
+        borderRadius: BorderRadius.all(
+          Radius.circular(10),
+        ),
+
+        gradient: LinearGradient(
+              colors: [Colors.white, Colors.blue],
+              begin: Alignment.topLeft,
+              end: Alignment.bottomRight,
+        ),
+
+        //color: Colors.blue[100],
+        
       ),
 
       width: MediaQuery.of(context).size.width * 0.90,
+      //height: 300,
 
       child: Column(
         children: [
@@ -53,7 +64,16 @@ class WidgetCarro extends StatelessWidget {
               fontStyle: FontStyle.italic,
             ),
           ),
-          Image.asset(this.foto),
+
+          //Incluir a foto do Carro
+          Container(
+              decoration: BoxDecoration(
+                  border: Border.all(
+                  width: 1,
+                ),
+ 
+              ),
+              child: Image.asset(this.foto)),
         ],
       ),
     );
